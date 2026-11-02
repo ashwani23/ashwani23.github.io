@@ -1,0 +1,200 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import IconBriefcase from "@/assets/icons/IconBriefcase.svg";
+import IconUsers from "@/assets/icons/IconUsers.svg";
+import IconComponents from "@/assets/icons/IconComponents.svg";
+import IconCertificate from "@/assets/icons/IconCertificate.svg";
+import IconWorld from "@/assets/icons/IconWorld.svg";
+import IconWallet from "@/assets/icons/IconWallet.svg";
+import IconSearch from "@/assets/icons/IconSearch.svg";
+import IconVideo from "@/assets/icons/IconVideo.svg";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Socials from "@/components/Socials.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import { useTranslations } from "@/i18n";
+import config from "@/config";
+
+const { socials } = config;
+
+const locale = Astro.currentLocale ?? config.site.lang;
+const t = useTranslations(locale);
+
+const homePath = getRelativeLocaleUrl(locale, "");
+
+const highlights = [
+  { Icon: IconBriefcase, value: "13+", label: "Years in software" },
+  {
+    Icon: IconUsers,
+    value: "10",
+    label: "Engineers in the front-end team I front",
+  },
+  { Icon: IconComponents, value: "~250", label: "React components maintained" },
+  {
+    Icon: IconCertificate,
+    value: "4",
+    label: "Certifications, incl. Generative AI Leader",
+  },
+];
+
+const projectsUrl = getRelativeLocaleUrl(locale, "projects");
+const featuredProjects = [
+  {
+    Icon: IconWorld,
+    title: "Enterprise web and guest experience platform",
+    summary:
+      "Technical lead for a 10-member front-end team at Holland America Line (Carnival Corporation), with a 250+ component Next.js library and AEM integration.",
+    stack: "Next.js, React, TypeScript, Storybook, AEM",
+    href: `${projectsUrl}#enterprise-web-and-guest-experience-platform`,
+  },
+  {
+    Icon: IconWallet,
+    title: "Loan and eWallet application",
+    summary:
+      "Front-end lead for a leading American cruise provider, maintaining about 250 Next.js components.",
+    stack: "Next.js, React, Storybook",
+    href: `${projectsUrl}#loan-and-ewallet-application`,
+  },
+  {
+    Icon: IconSearch,
+    title: "Customer search engine for VMware sales",
+    summary:
+      "Configurable, shareable React components with custom hooks and 80% test coverage.",
+    stack: "React, Jest, Katalon",
+    href: `${projectsUrl}#customer-search-engine-for-the-vmware-sales-team`,
+  },
+  {
+    Icon: IconVideo,
+    title: "Online video conferencing platform",
+    summary:
+      "Event streaming tool that syncs video and slides to each viewer's connection speed.",
+    stack: "Next.js, Angular, AWS MediaLive",
+    href: `${projectsUrl}#online-video-conferencing-and-presentation-platform`,
+  },
+];
+---
+
+<Layout>
+  <Header />
+  <main
+    id="main-content"
+    data-layout="index"
+    data-home-path={homePath}
+    class="app-layout my-1"
+  >
+    <section id="hero" class="border-border border-b pt-8 pb-6">
+      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
+        Hi, I'm Ashwani Goyal
+      </h1>
+
+      <p>
+        I'm an Engineering Manager at Xebia with over a decade of experience
+        building full stack platforms for enterprise clients. I lead engineering
+        teams, shape solution architecture and mentor engineers, working mostly
+        with Next.js, NestJS, Node.js, Python and cloud infrastructure.
+      </p>
+      <p class="mt-2">
+        Browse my{" "}
+        <LinkButton
+          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "experience")}
+        >
+          experience
+        </LinkButton>
+        ,{" "}
+        <LinkButton
+          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "projects")}
+        >
+          projects
+        </LinkButton>{" "}
+        and{" "}
+        <LinkButton
+          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "skills")}
+        >
+          skills
+        </LinkButton>
+        , or{" "}
+        <LinkButton
+          class="hover:text-accent underline decoration-dashed underline-offset-4"
+          href={getRelativeLocaleUrl(locale, "about")}
+        >
+          read more about me
+        </LinkButton>.
+      </p>
+      {
+        socials.length > 0 && (
+          <div class="mt-4 flex max-sm:flex-col sm:items-center">
+            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
+              {t.home.socialLinks}:
+            </div>
+            <Socials />
+          </div>
+        )
+      }
+    </section>
+
+    <section id="highlights" class="border-border border-b pt-8 pb-8">
+      <ul class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        {
+          highlights.map(({ Icon, value, label }) => (
+            <li class="border-border flex flex-col items-start gap-1 rounded-lg border p-4">
+              <Icon class="stroke-accent size-6" aria-hidden="true" />
+              <span class="text-2xl font-bold">{value}</span>
+              <span class="text-muted-foreground text-sm">{label}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section id="featured-projects" class="pt-8 pb-6">
+      <h2 class="text-2xl font-semibold tracking-wide">Featured projects</h2>
+      <ul class="mt-4 grid gap-4">
+        {
+          featuredProjects.map(({ Icon, title, summary, stack, href }) => (
+            <li>
+              <a
+                href={href}
+                class="border-border hover:border-accent group flex gap-4 rounded-lg border p-4 transition-colors"
+              >
+                <Icon
+                  class="stroke-accent mt-1 size-7 shrink-0"
+                  aria-hidden="true"
+                />
+                <div>
+                  <h3 class="group-hover:text-accent text-lg font-medium">
+                    {title}
+                  </h3>
+                  <p class="mt-1">{summary}</p>
+                  <p class="text-muted-foreground mt-2 text-sm">{stack}</p>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="my-6 text-center">
+        <LinkButton href={projectsUrl}>
+          All projects
+          <IconArrowRight class="inline-block rtl:-rotate-180" />
+        </LinkButton>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
+      ?.dataset;
+    const baseRoot = import.meta.env.BASE_URL.replace(/\/?$/, "/");
+    if (indexLayout?.layout) {
+      sessionStorage.setItem("backUrl", indexLayout.homePath ?? baseRoot);
+    }
+  });
+</script>

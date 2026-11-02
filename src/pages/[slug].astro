@@ -1,0 +1,59 @@
+---
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { getCollection, render } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import LinkButton from "@/components/LinkButton.astro";
+import { getAssetPath } from "@/utils/withBase";
+import config from "@/config";
+
+// One route for every Markdown file in `src/content/pages/`
+// (about, experience, projects, skills, ...).
+export const getStaticPaths = (async () => {
+  const pages = await getCollection("pages");
+  return pages.map(entry => ({ params: { slug: entry.id }, props: { entry } }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+// The PDF link appears on the Experience page, and only when the file exists.
+const PDF_FILE = "Ashwani-Goyal-Resume.pdf";
+const showPdf =
+  entry.id === "experience" &&
+  existsSync(join(process.cwd(), "public", PDF_FILE));
+---
+
+<Layout
+  title={`${entry.data.title} | ${config.site.title}`}
+  description={entry.data.description}
+  ogImage={entry.data.ogImage}
+  canonicalURL={entry.data.canonicalURL}
+>
+  <Header />
+
+  <Breadcrumb />
+
+  <Main pageTitle={entry.data.title} class="app-prose">
+    {
+      showPdf && (
+        <p class="not-prose mb-6">
+          <LinkButton
+            href={getAssetPath(PDF_FILE)}
+            class="hover:text-accent underline decoration-dashed underline-offset-4"
+          >
+            Download full resume (PDF)
+          </LinkButton>
+        </p>
+      )
+    }
+    <Content />
+  </Main>
+
+  <Footer />
+</Layout>

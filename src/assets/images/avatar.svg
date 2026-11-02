@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Illustrated avatar of Ashwani Goyal">
+  <defs>
+    <clipPath id="circle"><circle cx="256" cy="256" r="256"/></clipPath>
+    <clipPath id="face">
+      <path d="M172 214 C172 150 212 122 256 122 C300 122 340 150 340 214 L340 258 C340 308 306 340 256 340 C206 340 172 308 172 258 Z"/>
+    </clipPath>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d4ebf8"/>
+      <stop offset="1" stop-color="#6fb4de"/>
+    </linearGradient>
+    <linearGradient id="blazer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2d4fb0"/>
+      <stop offset="1" stop-color="#1b3278"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#circle)">
+    <!-- background -->
+    <rect width="512" height="512" fill="url(#bg)"/>
+    <circle cx="410" cy="110" r="70" fill="#ffffff" opacity="0.22"/>
+    <circle cx="90" cy="170" r="46" fill="#ffffff" opacity="0.16"/>
+
+    <!-- blazer / shoulders -->
+    <path d="M10 512 C20 434 84 398 188 370 L324 370 C428 398 492 434 502 512 Z" fill="url(#blazer)"/>
+
+    <!-- shirt -->
+    <path d="M196 364 L256 476 L316 364 Z" fill="#ffffff"/>
+
+    <!-- neck -->
+    <path d="M210 310 L210 366 Q256 426 302 366 L302 310 Z" fill="#b9805a"/>
+    <path d="M210 366 Q256 426 302 366 Q256 398 210 366 Z" fill="#a8704d" opacity="0.6"/>
+    <!-- chin shadow on neck -->
+    <path d="M214 330 Q256 372 298 330 L298 310 L214 310 Z" fill="#9a6444" opacity="0.55"/>
+
+    <!-- collars -->
+    <path d="M196 358 L252 400 L230 442 L182 376 Z" fill="#f4f6fa"/>
+    <path d="M316 358 L260 400 L282 442 L330 376 Z" fill="#f4f6fa"/>
+
+    <!-- lapels -->
+    <path d="M174 380 L230 446 L204 512 L112 512 L124 420 Z" fill="#162a66"/>
+    <path d="M338 380 L282 446 L308 512 L400 512 L388 420 Z" fill="#162a66"/>
+    <path d="M174 380 L230 446" stroke="#3a5cc0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M338 380 L282 446" stroke="#3a5cc0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+    <!-- breast pocket + pen -->
+    <path d="M340 468 L406 462" stroke="#122557" stroke-width="3" stroke-linecap="round"/>
+    <rect x="348" y="440" width="5" height="32" rx="2.5" fill="#d7dbe2"/>
+    <rect x="348" y="440" width="5" height="9" rx="2.5" fill="#9aa3b2"/>
+
+    <!-- ears -->
+    <ellipse cx="170" cy="236" rx="14" ry="25" fill="#c58a62"/>
+    <ellipse cx="342" cy="236" rx="14" ry="25" fill="#c58a62"/>
+    <ellipse cx="171" cy="238" rx="6" ry="13" fill="#a8704d" opacity="0.55"/>
+    <ellipse cx="341" cy="238" rx="6" ry="13" fill="#a8704d" opacity="0.55"/>
+
+    <!-- face -->
+    <path d="M172 214 C172 150 212 122 256 122 C300 122 340 150 340 214 L340 258 C340 308 306 340 256 340 C206 340 172 308 172 258 Z" fill="#d29a70"/>
+    <!-- cheek warmth -->
+    <ellipse cx="205" cy="246" rx="16" ry="10" fill="#c9805a" opacity="0.35"/>
+    <ellipse cx="307" cy="246" rx="16" ry="10" fill="#c9805a" opacity="0.35"/>
+
+    <!-- trimmed beard (clipped to face outline) -->
+    <g clip-path="url(#face)">
+      <path d="M160 200 C170 236 182 252 200 266 C214 256 232 252 256 252 C280 252 298 256 312 266 C330 252 342 236 352 200 L352 360 L160 360 Z" fill="#221d1b"/>
+      <!-- lighter jawline stubble -->
+      <path d="M176 262 C190 318 224 336 256 336 C288 336 322 318 336 262 C322 300 292 322 256 322 C220 322 190 300 176 262 Z" fill="#33292a" opacity="0.6"/>
+    </g>
+
+    <!-- mustache -->
+    <path d="M212 266 C226 248 244 250 256 258 C268 250 286 248 300 266 C286 274 270 268 256 268 C242 268 226 274 212 266 Z" fill="#14110f"/>
+
+    <!-- mouth -->
+    <path d="M232 281 Q256 304 280 281 Q256 288 232 281 Z" fill="#a4524a"/>
+    <path d="M238 282 Q256 296 274 282 Q256 288 238 282 Z" fill="#ffffff"/>
+
+    <!-- nose -->
+    <path d="M256 208 C250 230 244 244 249 250 Q256 255 263 250 C268 244 262 230 256 208" fill="#b9805a" opacity="0.7"/>
+
+    <!-- hair: swept back with volume -->
+    <path d="M174 214 C166 164 190 108 244 92 C262 86 282 84 300 90 C334 100 350 150 338 214 C336 192 332 172 322 160 C308 148 292 144 272 146 C246 140 214 144 198 160 C186 172 178 190 174 214 Z" fill="#14110f"/>
+    <!-- quiff volume -->
+    <path d="M204 150 C198 116 226 88 270 84 C312 82 334 108 330 146 C312 132 290 126 266 128 C240 126 218 136 204 150 Z" fill="#1e1917"/>
+    <path d="M214 134 C232 112 266 100 306 104" fill="none" stroke="#4a403b" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+    <path d="M204 148 C218 120 250 104 296 96" fill="none" stroke="#3a322e" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- eyebrows -->
+    <path d="M196 182 Q222 168 248 180" fill="none" stroke="#14110f" stroke-width="7" stroke-linecap="round"/>
+    <path d="M264 180 Q290 168 316 182" fill="none" stroke="#14110f" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- eyes -->
+    <ellipse cx="222" cy="206" rx="11" ry="6.5" fill="#ffffff"/>
+    <ellipse cx="290" cy="206" rx="11" ry="6.5" fill="#ffffff"/>
+    <circle cx="223" cy="206" r="5.5" fill="#2a1a12"/>
+    <circle cx="291" cy="206" r="5.5" fill="#2a1a12"/>
+    <circle cx="225" cy="204" r="1.8" fill="#ffffff"/>
+    <circle cx="293" cy="204" r="1.8" fill="#ffffff"/>
+
+    <!-- glasses -->
+    <g fill="#ffffff" fill-opacity="0.14" stroke="#5f6877" stroke-width="3.5" stroke-linejoin="round">
+      <rect x="194" y="186" width="56" height="38" rx="7"/>
+      <rect x="262" y="186" width="56" height="38" rx="7"/>
+    </g>
+    <path d="M250 196 Q256 190 262 196" fill="none" stroke="#5f6877" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M194 196 L172 192 M318 196 L340 192" stroke="#5f6877" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M202 192 L214 192 M270 192 L282 192" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  </g>
+</svg>
